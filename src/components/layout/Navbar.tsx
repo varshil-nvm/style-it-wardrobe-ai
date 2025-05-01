@@ -38,9 +38,9 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative rounded-full" size="icon">
                   <Avatar>
-                    <AvatarImage src={user.photoURL || ""} alt={user.displayName || "User"} />
+                    <AvatarImage src={user.photo_url || ""} alt={user.display_name || "User"} />
                     <AvatarFallback className="bg-styleit-400 text-white">
-                      {user.displayName ? user.displayName[0].toUpperCase() : <User className="h-4 w-4" />}
+                      {user.display_name ? user.display_name[0].toUpperCase() : <User className="h-4 w-4" />}
                     </AvatarFallback>
                   </Avatar>
                 </Button>
