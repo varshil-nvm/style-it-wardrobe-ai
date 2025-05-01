@@ -50,10 +50,11 @@ const Register = () => {
     
     try {
       await register(email, password, name);
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
+      console.log("Registration successful, redirecting to dashboard");
     } catch (error) {
       // Error is handled in useAuth
-    } finally {
+      console.error("Registration error caught in component:", error);
       setIsLoading(false);
     }
   };

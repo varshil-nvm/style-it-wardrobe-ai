@@ -9,7 +9,114 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      outfits: {
+        Row: {
+          created_at: string
+          date: string | null
+          favorite: boolean | null
+          id: string
+          items: string[]
+          name: string
+          notes: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          date?: string | null
+          favorite?: boolean | null
+          id?: string
+          items: string[]
+          name: string
+          notes?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          date?: string | null
+          favorite?: boolean | null
+          id?: string
+          items?: string[]
+          name?: string
+          notes?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string
+          id: string
+          photo_url: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email: string
+          id: string
+          photo_url?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string
+          id?: string
+          photo_url?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      wardrobe_items: {
+        Row: {
+          brand: string | null
+          category: string
+          color: string
+          created_at: string
+          id: string
+          image_url: string | null
+          is_dirty: boolean | null
+          last_washed: string | null
+          name: string
+          size: string | null
+          tags: string[] | null
+          times_worn: number | null
+          user_id: string
+        }
+        Insert: {
+          brand?: string | null
+          category: string
+          color: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          is_dirty?: boolean | null
+          last_washed?: string | null
+          name: string
+          size?: string | null
+          tags?: string[] | null
+          times_worn?: number | null
+          user_id: string
+        }
+        Update: {
+          brand?: string | null
+          category?: string
+          color?: string
+          created_at?: string
+          id?: string
+          image_url?: string | null
+          is_dirty?: boolean | null
+          last_washed?: string | null
+          name?: string
+          size?: string | null
+          tags?: string[] | null
+          times_worn?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

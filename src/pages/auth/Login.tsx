@@ -24,7 +24,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
-  const from = (location.state as any)?.from || "/";
+  const from = (location.state as any)?.from || "/dashboard";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,9 +43,10 @@ const Login = () => {
     try {
       await login(email, password);
       navigate(from, { replace: true });
+      console.log("Login successful, redirecting to", from);
     } catch (error) {
       // Error is handled in useAuth
-    } finally {
+      console.error("Login error caught in component:", error);
       setIsLoading(false);
     }
   };
